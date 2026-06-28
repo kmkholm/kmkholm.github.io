@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Mohammed Tawfik — Cybersecurity & AI Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#fff;color:#333;line-height:1.7}
+a{color:#4054b2;text-decoration:none}
+a:hover{color:#2d3a8c}
+img{max-width:100%}
+.container{max-width:1100px;margin:0 auto;padding:0 30px}
+
+/* NAV BAR */
+.topbar{background:#4054b2;color:#fff;padding:8px 0;font-size:13px}
+.topbar .container{display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:#fff;margin-left:12px;font-size:13px}
+.topbar a:hover{color:#c5cae9}
+nav{background:#fff;border-bottom:1px solid #e8e8e8;position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 30px;max-width:1100px;margin:0 auto}
+.nav-name{font-size:18px;font-weight:800;color:#333}
+.nav-name span{color:#4054b2}
+.nav-links{display:flex;gap:24px}
+.nav-links a{font-size:13px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:1px;padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:#4054b2;border-bottom-color:#4054b2}
+.hamburger{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:#333}
+
+/* HERO */
+.hero{background:#f5f6fa;padding:60px 0 50px}
+.hero .container{display:flex;align-items:center;gap:50px}
+.hero-text{flex:1}
+.hero-text h1{font-size:36px;font-weight:800;color:#222;line-height:1.2;margin-bottom:6px}
+.hero-text h1 span{color:#4054b2}
+.hero-text .subtitle{font-size:16px;font-weight:600;color:#4054b2;margin-bottom:12px}
+.hero-text .bio{font-size:14px;color:#666;line-height:1.8;margin-bottom:20px}
+.hero-photo{width:200px;height:200px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:6px;font-size:13px;font-weight:600;transition:.2s;border:2px solid #e0e0e0;color:#555;background:#fff}
+.btn:hover{border-color:#4054b2;color:#4054b2}
+.btn-fill{background:#4054b2;color:#fff;border-color:#4054b2}
+.btn-fill:hover{background:#2d3a8c;border-color:#2d3a8c;color:#fff}
+.btn-red{background:#e74c3c;color:#fff;border-color:#e74c3c}
+.btn-red:hover{background:#c0392b;border-color:#c0392b;color:#fff}
+
+.stats-row{display:flex;gap:20px;flex-wrap:wrap}
+.stat-box{text-align:center;min-width:90px}
+.stat-box .num{font-size:28px;font-weight:800;color:#4054b2}
+.stat-box .label{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px}
+
+/* SECTIONS */
+section{padding:50px 0}
+.section-title{font-size:24px;font-weight:800;margin-bottom:25px;color:#222;position:relative;padding-bottom:10px}
+.section-title::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:#4054b2;border-radius:2px}
+.section-title span{color:#4054b2}
+
+/* INTERESTS */
+.interests{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tag{padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#f0f1f8;color:#4054b2;border:1px solid #d8daf0;transition:.2s}
+.tag:hover{background:#4054b2;color:#fff}
+
+/* PUBLICATIONS */
+.pub-filters{display:flex;gap:6px;margin-bottom:15px;flex-wrap:wrap}
+.pub-btn{padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;background:#f5f5f5;border:1px solid #e0e0e0;color:#777;cursor:pointer;transition:.2s}
+.pub-btn.active,.pub-btn:hover{background:#4054b2;color:#fff;border-color:#4054b2}
+.pub-scroll{max-height:550px;overflow-y:auto;padding-right:8px}
+.pub-scroll::-webkit-scrollbar{width:4px}
+.pub-scroll::-webkit-scrollbar-thumb{background:#ccc;border-radius:4px}
+.pub{padding:10px 14px;margin-bottom:5px;border-radius:6px;background:#fafafa;border-left:3px solid #4054b2;display:none;transition:.2s}
+.pub.show{display:block}
+.pub:hover{background:#f0f1f8}
+.pub .p-title{font-size:14px;font-weight:600;color:#333}
+.pub .p-venue{font-size:12px;color:#888;margin-top:2px}
+.pub .p-venue em{color:#4054b2;font-style:normal;font-weight:500}
+
+/* PROJECTS */
+.proj-filters{display:flex;gap:6px;margin-bottom:15px;flex-wrap:wrap}
+.pf-btn{padding:5px 14px;border-radius:18px;font-size:12px;font-weight:600;background:#f5f5f5;border:1px solid #e0e0e0;color:#777;cursor:pointer;transition:.2s}
+.pf-btn.active,.pf-btn:hover{background:#27ae60;color:#fff;border-color:#27ae60}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.proj{padding:14px 16px;border-radius:8px;background:#fafafa;border:1px solid #eee;display:none;transition:.2s}
+.proj.show{display:block}
+.proj:hover{border-color:#4054b2;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+.proj h3{font-size:14px;font-weight:700;margin-bottom:4px}
+.proj h3 a{color:#333}
+.proj h3 a:hover{color:#4054b2}
+.proj p{font-size:12px;color:#888;line-height:1.5}
+.proj-meta{display:flex;gap:12px;margin-top:6px;font-size:11px}
+.proj-lang{color:#27ae60;font-weight:600;display:flex;align-items:center;gap:4px}
+.proj-lang::before{content:'';width:7px;height:7px;border-radius:50%;background:#27ae60}
+.proj-stars{color:#e67e22}
+
+/* TIMELINE */
+.timeline{border-left:3px solid #4054b2;margin-left:15px;padding-left:25px}
+.tl{margin-bottom:20px;position:relative}
+.tl::before{content:'';position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:#4054b2;border:3px solid #fff;box-shadow:0 0 0 2px #4054b2}
+.tl .period{font-size:12px;font-weight:600;color:#4054b2}
+.tl .role{font-size:15px;font-weight:700;color:#222}
+.tl .org{font-size:13px;color:#888}
+.tl .detail{font-size:13px;color:#999;margin-top:4px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.skill-card{padding:16px;border-radius:8px;background:#fafafa;border:1px solid #eee}
+.skill-card h3{font-size:14px;font-weight:700;color:#4054b2;margin-bottom:8px}
+.skill-card .stags{display:flex;flex-wrap:wrap;gap:4px}
+.skill-card .stag{font-size:12px;padding:4px 10px;border-radius:4px;background:#f0f1f8;color:#555}
+
+/* CERTS */
+.certs{display:flex;gap:12px;flex-wrap:wrap}
+.cert{flex:1;min-width:180px;padding:16px;border-radius:8px;background:#fafafa;border:1px solid #eee}
+.cert:hover{border-color:#e67e22}
+.cert .c-name{font-size:16px;font-weight:700}
+.cert .c-org{font-size:12px;color:#888}
+.cert .c-year{font-size:12px;font-weight:600;color:#e67e22}
+
+/* EDU */
+.edu{padding:12px 16px;margin-bottom:8px;border-radius:8px;background:#fafafa;border:1px solid #eee}
+.edu .e-year{font-size:12px;font-weight:600;color:#4054b2}
+.edu .e-deg{font-size:14px;font-weight:700}
+.edu .e-school{font-size:13px;color:#888}
+
+/* REVIEWS */
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px}
+.rev{padding:8px 12px;border-radius:6px;background:#fafafa;border:1px solid #eee;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.rev .r-count{font-weight:700;color:#4054b2}
+
+/* CONTACT */
+.contact-section{background:#4054b2;color:#fff;padding:50px 0}
+.contact-section .section-title{color:#fff}
+.contact-section .section-title::after{background:#fff}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.c-item{padding:14px 16px;border-radius:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);transition:.2s}
+.c-item:hover{background:rgba(255,255,255,.18)}
+.c-item a{color:#fff}
+.c-item .c-label{font-size:11px;opacity:.7;text-transform:uppercase;letter-spacing:1px}
+.c-item .c-val{font-size:14px;font-weight:500}
+
+/* FOOTER */
+footer{background:#2d3a8c;color:rgba(255,255,255,.6);padding:20px 0;text-align:center;font-size:12px}
+
+/* SEPARATOR */
+.sep{height:1px;background:#eee;margin:0}
+
+@media(max-width:768px){
+  .hero .container{flex-direction:column-reverse;text-align:center}
+  .hero-photo{width:150px;height:150px}
+  .hero-buttons,.stats-row{justify-content:center}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:16px 30px;gap:10px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+  .hamburger{display:block}
+  .hero-text h1{font-size:28px}
+  .proj-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar"><div class="container">
+  <span>&#9993; kmkhol01@gmail.com</span>
+  <div>
+    <a href="https://scholar.google.com/citations?hl=en&user=GHZMU_oAAAAJ" target="_blank">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-1227-387X" target="_blank">ORCID</a>
+    <a href="https://github.com/kmkholm" target="_blank">GitHub</a>
+    <a href="https://www.scopus.com/authid/detail.uri?authorId=57222298498" target="_blank">Scopus</a>
+  </div>
+</div></div>
+
+<!-- NAV -->
+<nav><div class="nav-inner">
+  <div class="nav-name">DR. MOHAMMED <span>TAWFIK</span></div>
+  <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<!-- HERO -->
+<section class="hero"><div class="container">
+  <div class="hero-text">
+    <h1>Dr. Mohammed <span>Tawfik</span></h1>
+    <div class="subtitle">Assistant Professor of Cybersecurity &amp; Cloud Computing</div>
+    <p class="bio">Sana'a University, Yemen &middot; Ajloun National University, Jordan<br><br>
+    Researcher in federated learning, KAN architectures, explainable AI, and IoT security. Author of 55+ peer-reviewed publications in SCI &amp; Scopus-indexed venues. Active reviewer with 365+ completed reviews across 36+ journals.</p>
+    <div class="hero-buttons">
+      <a href="mailto:kmkhol01@gmail.com" class="btn btn-fill">&#9993; Email Me</a>
+      <a href="https://scholar.google.com/citations?hl=en&user=GHZMU_oAAAAJ" target="_blank" class="btn">Google Scholar</a>
+      <a href="https://github.com/kmkholm" target="_blank" class="btn">GitHub</a>
+      <a href="https://orcid.org/0000-0002-1227-387X" target="_blank" class="btn">ORCID</a>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box"><div class="num">55+</div><div class="label">Publications</div></div>
+      <div class="stat-box"><div class="num">365+</div><div class="label">Peer Reviews</div></div>
+      <div class="stat-box"><div class="num">36+</div><div class="label">Journals</div></div>
+    </div>
+  </div>
+  <img class="hero-photo" src="profile.jpg" alt="Dr. Mohammed Tawfik">
+</div></section>
+
+<!-- RESEARCH -->
+<section id="about"><div class="container">
+  <h2 class="section-title">Research <span>Interests</span></h2>
+  <div class="interests">
+    <span class="tag">Federated Learning</span><span class="tag">KAN Architectures</span><span class="tag">Intrusion Detection</span><span class="tag">IoT / IoMT Security</span><span class="tag">Explainable AI</span><span class="tag">Speech Emotion Recognition</span><span class="tag">LLMs for Cybersecurity</span><span class="tag">Blockchain &amp; Smart Contracts</span><span class="tag">Differential Privacy</span><span class="tag">Healthcare AI</span>
+  </div>
+</div></section>
+
+<div class="sep"></div>
+
+<!-- PUBLICATIONS -->
+<section id="publications"><div class="container">
+  <h2 class="section-title"><span>Publications</span></h2>
+  <p style="font-size:13px;color:#888;margin-bottom:12px">55+ peer-reviewed publications &middot; <a href="https://scholar.google.com/citations?hl=en&user=GHZMU_oAAAAJ" target="_blank">Google Scholar</a> &middot; <a href="https://orcid.org/0000-0002-1227-387X" target="_blank">ORCID (50 works listed)</a></p>
+  <div class="pub-filters">
+    <span class="pub-btn active" onclick="fpub('all',this)">All</span>
+    <span class="pub-btn" onclick="fpub('j',this)">Journals</span>
+    <span class="pub-btn" onclick="fpub('c',this)">Conferences &amp; Chapters</span>
+  </div>
+  <div class="pub-scroll">
+    <div class="pub show" data-t="j"><div class="p-title">HIFN-Transformer: Learnable Information-Theoretic Parameters for Interpretable Deep Classification</div><div class="p-venue"><em>IEEE Access</em> &middot; In Press</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">AMSE: Dialect-Aware Multi-Strategy Ensemble for Arabic Vishing Detection</div><div class="p-venue"><em>PeerJ Computer Science</em> &middot; In Press</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">FL-Based Cervical Cancer Classification Using Hybrid KAN-ViT-Autoencoder</div><div class="p-venue"><em>Neural Computing and Applications</em> &middot; In Press</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">SFB-KAN: Federated B-Spline KAN for In-Vehicle Intrusion Detection</div><div class="p-venue"><em>Neural Computing and Applications</em> &middot; In Press</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">EKT-XAI: Efficient KAN Transformer for Lightweight Smishing Detection</div><div class="p-venue"><em>Accepted</em></div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Optimizing Bitcoin Trading with Deep RL and Recurrent Neural Networks</div><div class="p-venue"><em>Accepted</em></div></div>
+    <div class="pub show" data-t="j"><div class="p-title">MambaResp-KAN: State Space Model with KAN for Respiratory Disease Classification</div><div class="p-venue"><em>IJIGSP</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">KANWhisper: Learnable Activation Functions for Arabic ASR</div><div class="p-venue"><em>Scientific Reports</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">MultiScaleKANNet: Hybrid CNN-KAN-Transformer for Bone-Loss Risk Stratification</div><div class="p-venue"><em>Scientific Reports</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">FedEmoNet: Privacy-Preserving FL with TCN-Transformer for Cross-Corpus SER</div><div class="p-venue"><em>PLOS ONE</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Explainable Multi-Objective Evacuation Optimization: Fractional-Order EvoMapX</div><div class="p-venue"><em>Fractal and Fractional</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Privacy-Preserving Cloud Storage with Hybrid Encryption &amp; Blockchain</div><div class="p-venue"><em>Scientific Reports</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Cross-Attention Transformer for Respiratory Disease Classification</div><div class="p-venue"><em>SOIC</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">MSDA-GDS: Federated XAI for CAN Bus IDS in IoV</div><div class="p-venue"><em>SOIC</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Few-Shot Android Malware with Quantum-Enhanced Prototypical Learning</div><div class="p-venue"><em>Scientific Reports</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Symmetry-Driven Multi-Objective Optimization for Healthcare</div><div class="p-venue"><em>Symmetry</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Dynamic Fog Node Placement with Pufferfish Optimization for IoT</div><div class="p-venue"><em>Scientific Reports</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Fractional Tchebichef-ResNet-SE for IoT Intrusion Detection</div><div class="p-venue"><em>Fractal and Fractional</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">UAV-Based Traffic Monitoring: Review of DL and Edge Computing</div><div class="p-venue"><em>BEEI</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Ensemble Neural Networks for Hydraulic Structures Stability</div><div class="p-venue"><em>Scientific Reports</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Cross-Attention Feature Fusion for Zero-Day Malware Detection</div><div class="p-venue"><em>SOIC</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Attention-Guided GNN for Software Defect Prediction</div><div class="p-venue"><em>SOIC</em> &middot; 2026</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Securing IoT Systems Using AI-Driven Approaches</div><div class="p-venue"><em>SOIC</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">High-Dimensional Feature Selection with Modified Energy Valley Optimizer</div><div class="p-venue"><em>SOIC</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">E-RespiNet: LLM-ELECTRA Triple-Stream CNN for Asthma Classification</div><div class="p-venue"><em>PLOS ONE</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Enhanced Binary Secretary Bird Optimization for Feature Selection</div><div class="p-venue"><em>SOIC</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">HydroNet: Hybrid CNN-Transformer for Water Quality Classification</div><div class="p-venue"><em>IJIES</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Quantum-Resistant IoT Authentication via ZKP &amp; Blockchain</div><div class="p-venue"><em>SOIC</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Transforming IoT Security through LLMs: Comprehensive Review</div><div class="p-venue"><em>SOIC</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Enhancing IoT with Bio-Inspired Intelligence in Fog Computing</div><div class="p-venue"><em>SOIC</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Adoption of AI Writing Tools Among Academic Researchers</div><div class="p-venue"><em>PLOS ONE</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">XF-PhishBERT: Explainable Few-Shot ModernBERT for Phishing</div><div class="p-venue"><em>Scientific Reports</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">FedMedSecure: Federated Few-Shot Learning with XAI for Healthcare</div><div class="p-venue"><em>Scientific Reports</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">FedSER-XAI: PSO Multi-Stream Cross-Attention for Federated SER</div><div class="p-venue"><em>Scientific Reports</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Fractional Laguerre Polynomial for Gene Expression Feature Selection</div><div class="p-venue"><em>Mathematics</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">ML/DL for Learning-Related Features in EEG During L2 Acquisition</div><div class="p-venue"><em>Cogent Arts &amp; Humanities</em> &middot; 2025</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Optimized Intrusion Detection in IoT Using Ensemble Learning</div><div class="p-venue"><em>PLOS ONE</em> &middot; 2024</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Hybrid Quantum-Classical Architecture with KAN for Water Quality</div><div class="p-venue"><em>Under Review</em></div></div>
+    <div class="pub show" data-t="j"><div class="p-title">DL-Based Early Detection of Alzheimer's Using MRI</div><div class="p-venue"><em>Under Review</em></div></div>
+    <div class="pub show" data-t="j"><div class="p-title">The Risks and Weakness Security on the IoT</div><div class="p-venue"><em>SSRN</em> &middot; 2020</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Optimized Blockchain for Secure IoT Data Management</div><div class="p-venue"><em>IEEE ICITEICS</em> &middot; 2024</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Epileptic Seizure Monitoring Based on IoT and ML</div><div class="p-venue"><em>IEEE INOCON</em> &middot; 2024</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Arabic Hate Speech Detection via Transfer Learning with BERT</div><div class="p-venue"><em>IEEE SMART GENCON</em> &middot; 2023</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Enhancing Epileptic Seizure Detection with AI on EEG</div><div class="p-venue"><em>IEEE SMART GENCON</em> &middot; 2023</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Accurate and Flexible Arabic Speech Recognition</div><div class="p-venue"><em>IEEE GCITC</em> &middot; 2023</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Covid-19 Detection from Cough Sound Using DNN</div><div class="p-venue"><em>IEEE ICSSIT</em> &middot; 2022</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">IoT Middleware vs Cyber-Attacks on Smart Homes (SDN &amp; DL)</div><div class="p-venue"><em>IEEE ICCMST</em> &middot; 2021</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Real-Time Remote Patient Monitoring via IoT</div><div class="p-venue"><em>IEEE ICCMST</em> &middot; 2021</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">COVID-19 Detection via IoT Wearable Bracelet</div><div class="p-venue"><em>Springer Chapter</em> &middot; 2023</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">ML vs Neural Network for Breast Cancer Prediction</div><div class="p-venue"><em>Springer Chapter</em> &middot; 2022</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Epileptic Seizure Classification Using ML/DL from EEG</div><div class="p-venue"><em>Springer Chapter</em> &middot; 2022</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">DL Web App for COVID-19 Detection from Chest X-Ray</div><div class="p-venue"><em>Springer Chapter</em> &middot; 2022</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Real-Time Student Engagement Detection via DL</div><div class="p-venue"><em>Springer Chapter</em> &middot; 2022</div></div>
+    <div class="pub show" data-t="c"><div class="p-title">Asthma Detection: Machine and Deep Learning Techniques</div><div class="p-venue"><em>Springer Chapter</em> &middot; 2021</div></div>
+  </div>
+</div></section>
+
+<div class="sep"></div>
+
+<!-- PROJECTS -->
+<section id="projects"><div class="container">
+  <h2 class="section-title">GitHub <span>Projects</span></h2>
+  <div class="proj-filters">
+    <span class="pf-btn active" onclick="fproj('all',this)">All (49)</span>
+    <span class="pf-btn" onclick="fproj('sec',this)">Security</span>
+    <span class="pf-btn" onclick="fproj('ai',this)">AI / ML</span>
+    <span class="pf-btn" onclick="fproj('bc',this)">Blockchain</span>
+    <span class="pf-btn" onclick="fproj('viz',this)">Visualization</span>
+    <span class="pf-btn" onclick="fproj('edu',this)">Courses</span>
+    <span class="pf-btn" onclick="fproj('oth',this)">Other</span>
+  </div>
+  <div class="proj-grid">
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/phishing" target="_blank">phishing</a></h3><p>Phishing detection and analysis</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 2</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/sec" target="_blank">sec</a></h3><p>Security tools for vulnerability assessment</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/ejptv2" target="_blank">ejptv2</a></h3><p>eJPTv2 penetration testing resources</p><div class="proj-meta"><span class="proj-lang">Docs</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/cybersecurity_toolkit-ML-" target="_blank">cybersecurity_toolkit-ML</a></h3><p>ML-powered cybersecurity toolkit</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/ACE-Password-Cracker" target="_blank">ACE-Password-Cracker</a></h3><p>Adaptive Cracking Engine with GUI</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Advanced-Digital-Signature-Based-Firewall-" target="_blank">Digital-Signature-Firewall</a></h3><p>Digital signature-based firewall</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Automated-Incident-Response-IR-Simulator" target="_blank">IR-Simulator</a></h3><p>Automated incident response simulation</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/antivirus_gui" target="_blank">antivirus_gui</a></h3><p>Antivirus with graphical interface</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/steganography-Tools" target="_blank">steganography-Tools</a></h3><p>Steganography tools for data hiding</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Secure-File-Encryptor" target="_blank">Secure-File-Encryptor</a></h3><p>File encryption utility</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Secure-Cloud-Storage-with-Client-Side-Encryption" target="_blank">Secure-Cloud-Storage</a></h3><p>Client-side encrypted cloud storage</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/SecureShare-Encrypted-Secret-Sharing-Platform" target="_blank">SecureShare</a></h3><p>Encrypted secret sharing platform</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Network-Device-Monitor-with-Digital-Signature-System" target="_blank">Network-Device-Monitor</a></h3><p>Network monitoring with digital signatures</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Advanced-Network-Automation-Tool" target="_blank">Network-Automation</a></h3><p>Network automation tools</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Internet-of-Things-IoT-security" target="_blank">IoT-Security</a></h3><p>IoT security research tools</p><div class="proj-meta"><span class="proj-lang">Python</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/secure-communication-protocol" target="_blank">secure-comm-protocol</a></h3><p>Secure communication protocol</p><div class="proj-meta"><span class="proj-lang">HTML</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Image-ai-Detection-Bypass-Utility" target="_blank">AI-Detection-Bypass</a></h3><p>AI image detection bypass</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Advanced-Task-Manager-Pro" target="_blank">Task-Manager-Pro</a></h3><p>Advanced task manager</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Digital-Forensics-" target="_blank">Digital-Forensics</a></h3><p>Digital forensics tools</p><div class="proj-meta"><span class="proj-lang">Docs</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/AI-Based-Antivirus-System" target="_blank">AI-Antivirus</a></h3><p>AI-powered antivirus</p><div class="proj-meta"><span class="proj-lang">Docs</span></div></div>
+
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/HIFN-Hybrid-Information-Flow-Networks" target="_blank">HIFN-Networks</a></h3><p>Hybrid Information-Flow Networks for IDS</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/HIFN2" target="_blank">HIFN2</a></h3><p>HIFN-Transformer v2</p><div class="proj-meta"><span class="proj-lang">Python</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/FedMamba-IoMT" target="_blank">FedMamba-IoMT</a></h3><p>Federated Mamba for IoMT security</p><div class="proj-meta"><span class="proj-lang">Python</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/-Privacy-Preserving-Federated-Learning-for-Alzheimer-s-Classification" target="_blank">FL-Alzheimers</a></h3><p>Privacy-preserving FL for Alzheimer's</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/OsteoporosisRiskPrediction" target="_blank">OsteoporosisRisk</a></h3><p>ML-based osteoporosis risk prediction</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/Nested-Learning-for-Heart-Disease-Prediction" target="_blank">Heart-Disease</a></h3><p>Nested learning for heart disease</p><div class="proj-meta"><span class="proj-lang">Jupyter</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/credit-card-fraud-detection-using" target="_blank">Fraud-Detection</a></h3><p>Credit card fraud detection</p><div class="proj-meta"><span class="proj-lang">Jupyter</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/Deep-Learning-Sketch-Cleanup-Fully-Convolutional-Neural-Network" target="_blank">DL-Sketch-Cleanup</a></h3><p>Sketch cleanup with FCNN</p><div class="proj-meta"><span class="proj-lang">Jupyter</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/Consciousness-Computing-Platform" target="_blank">Consciousness-Computing</a></h3><p>Consciousness computing platform</p><div class="proj-meta"><span class="proj-lang">Jupyter</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/Qari-OCR-LLM-Based-Arabic-Text-Recognition-System" target="_blank">Qari-OCR</a></h3><p>LLM-based Arabic text recognition</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/rabic-Scam-and-Legitimate-Call-Conversation-Dataset-ASLC-448-" target="_blank">Arabic-Scam-Dataset</a></h3><p>ASLC-448 scam call dataset</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/Real-Time-Violence-Detection-in-Video-" target="_blank">Violence-Detection</a></h3><p>Real-time violence detection in video</p><div class="proj-meta"><span class="proj-lang">Jupyter</span><span class="proj-stars">&#9733; 1</span></div></div>
+
+    <div class="proj show" data-c="bc"><h3><a href="https://github.com/kmkholm/quantum-zkp-project" target="_blank">quantum-zkp</a></h3><p>Quantum-resistant zero-knowledge proofs</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="bc"><h3><a href="https://github.com/kmkholm/Data-Privacy-Preserving-Cloud-Storage-Hybrid-Encryption-Blockchain" target="_blank">Privacy-Cloud-Blockchain</a></h3><p>Hybrid encryption + blockchain</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="bc"><h3><a href="https://github.com/kmkholm/Dream-Cryptography" target="_blank">Dream-Cryptography</a></h3><p>Novel cryptography</p><div class="proj-meta"><span class="proj-lang">Python</span></div></div>
+    <div class="proj show" data-c="bc"><h3><a href="https://github.com/kmkholm/Blockchain-visualization" target="_blank">Blockchain-viz</a></h3><p>Interactive blockchain visualization</p><div class="proj-meta"><span class="proj-lang">HTML</span><span class="proj-stars">&#9733; 1</span></div></div>
+
+    <div class="proj show" data-c="viz"><h3><a href="https://github.com/kmkholm/Data-Structure-Visualizations" target="_blank">Data-Structure-Viz</a></h3><p>Interactive data structures</p><div class="proj-meta"><span class="proj-lang">HTML</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="viz"><h3><a href="https://github.com/kmkholm/cryptography-visualization" target="_blank">Crypto-Viz</a></h3><p>Caesar, Vigenere, AES, DES visualizer</p><div class="proj-meta"><span class="proj-lang">HTML</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="viz"><h3><a href="https://github.com/kmkholm/quantum_computing_visualization-v1" target="_blank">Quantum-Viz</a></h3><p>Quantum computing visualization</p><div class="proj-meta"><span class="proj-lang">HTML</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="viz"><h3><a href="https://github.com/kmkholm/advanced-journal-metrics-scholar" target="_blank">Journal-Metrics</a></h3><p>Journal metrics analysis tool</p><div class="proj-meta"><span class="proj-lang">JavaScript</span><span class="proj-stars">&#9733; 1</span></div></div>
+
+    <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/Introduction-to-Cybersecurity-Course" target="_blank">Intro-Cybersecurity</a></h3><p>Course materials</p><div class="proj-meta"><span class="proj-lang">PPT</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/Cloud-computing-security" target="_blank">Cloud-Security</a></h3><p>Cloud computing security course</p><div class="proj-meta"><span class="proj-lang">Docs</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/Principles-of-Cloud-Computing" target="_blank">Cloud-Principles</a></h3><p>Cloud computing principles</p><div class="proj-meta"><span class="proj-lang">PPT</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/secure-software-engineering-SSE" target="_blank">Secure-Software-Eng</a></h3><p>SSE course PPT</p><div class="proj-meta"><span class="proj-lang">PPT</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/digital-forensics-lab" target="_blank">Forensics-Lab</a></h3><p>Hands-on forensics labs</p><div class="proj-meta"><span class="proj-lang">Docs</span></div></div>
+
+    <div class="proj show" data-c="oth"><h3><a href="https://github.com/kmkholm/CHI660C-Python-Controller" target="_blank">CHI660C-Controller</a></h3><p>Electrochemical workstation controller</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 2</span></div></div>
+    <div class="proj show" data-c="oth"><h3><a href="https://github.com/kmkholm/RuView" target="_blank">RuView</a></h3><p>WiFi to spatial intelligence</p><div class="proj-meta"><span class="proj-lang">Docs</span></div></div>
+    <div class="proj show" data-c="oth"><h3><a href="https://github.com/kmkholm/agenticSeek" target="_blank">agenticSeek</a></h3><p>Fully local autonomous AI agent</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="oth"><h3><a href="https://github.com/kmkholm/claw-code" target="_blank">claw-code</a></h3><p>Better harness tools</p><div class="proj-meta"><span class="proj-lang">Docs</span><span class="proj-stars">&#9733; 1</span></div></div>
+  </div>
+</div></section>
+
+<div class="sep"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience"><div class="container">
+  <h2 class="section-title"><span>Experience</span></h2>
+  <div class="timeline">
+    <div class="tl"><div class="period">2024 — Present</div><div class="role">Assistant Professor — Cybersecurity &amp; Cloud Computing</div><div class="org">Ajloun National University, Jordan</div><div class="detail">10 cybersecurity courses, 250+ students, hands-on labs for pen testing, forensics, cloud security.</div></div>
+    <div class="tl"><div class="period">2024 — Present</div><div class="role">Faculty Member (Dual Affiliation)</div><div class="org">Sana'a University, Yemen</div></div>
+    <div class="tl"><div class="period">2026</div><div class="role">Guest Associate Editor</div><div class="org">Frontiers in Blockchain — Smart Contract Vulnerability Detection Using LLMs</div></div>
+    <div class="tl"><div class="period">2024 — 2025</div><div class="role">Principal Investigator — Secure Digital Government Systems</div><div class="org">ANU (20,000 JOD budget, 8-person team)</div></div>
+    <div class="tl"><div class="period">2021 — 2024</div><div class="role">Research Supervisor</div><div class="org">BAMU University, India</div><div class="detail">4 graduate students, 6 Q1/Q2 publications, IoT security lab.</div></div>
+    <div class="tl"><div class="period">2023 — Present</div><div class="role">Research Consultant</div><div class="org">Eram Research Centre</div></div>
+    <div class="tl"><div class="period">2019 — 2021</div><div class="role">IT &amp; Network Specialist</div><div class="org">LiveSalesman</div></div>
+    <div class="tl"><div class="period">2014 — 2016</div><div class="role">IT Support &amp; Network Admin</div><div class="org">DIMES Institute</div></div>
+  </div>
+</div></section>
+
+<div class="sep"></div>
+
+<!-- EDUCATION -->
+<section><div class="container">
+  <h2 class="section-title"><span>Education</span></h2>
+  <div class="edu"><div class="e-year">2019 — 2024</div><div class="e-deg">Ph.D. in Information Technology — AI &amp; Cybersecurity</div><div class="e-school">BAMU University, India</div></div>
+  <div class="edu"><div class="e-year">2016 — 2018</div><div class="e-deg">M.IT — IoT &amp; Networking</div><div class="e-school">BAMU University, India</div></div>
+  <div class="edu"><div class="e-year">2010 — 2014</div><div class="e-deg">B.Sc. Network Technology &amp; Computer Security</div><div class="e-school">Sana'a University, Yemen</div></div>
+</div></section>
+
+<div class="sep"></div>
+
+<!-- CERTS -->
+<section><div class="container">
+  <h2 class="section-title"><span>Certifications</span></h2>
+  <div class="certs">
+    <div class="cert"><div class="c-name">CISA</div><div class="c-org">ISACA</div><div class="c-year">2025</div></div>
+    <div class="cert"><div class="c-name">eJPTv2</div><div class="c-org">INE Security</div><div class="c-year">2026</div></div>
+    <div class="cert"><div class="c-name">CySA+</div><div class="c-org">CompTIA</div><div class="c-year">In Progress</div></div>
+  </div>
+</div></section>
+
+<div class="sep"></div>
+
+<!-- SKILLS -->
+<section id="skills"><div class="container">
+  <h2 class="section-title">Technical <span>Skills</span></h2>
+  <div class="skills-grid">
+    <div class="skill-card"><h3>Programming</h3><div class="stags"><span class="stag">Python</span><span class="stag">Java</span><span class="stag">C#</span><span class="stag">PHP</span><span class="stag">VB.NET</span><span class="stag">ASP.NET</span><span class="stag">Solidity</span></div></div>
+    <div class="skill-card"><h3>AI / ML / DL</h3><div class="stags"><span class="stag">PyTorch</span><span class="stag">TensorFlow</span><span class="stag">FL</span><span class="stag">KAN</span><span class="stag">Transformers</span><span class="stag">XAI</span><span class="stag">SPSS</span><span class="stag">R</span><span class="stag">Power BI</span></div></div>
+    <div class="skill-card"><h3>Cybersecurity</h3><div class="stags"><span class="stag">Pen Testing</span><span class="stag">IDS/IPS</span><span class="stag">Firewalls</span><span class="stag">VPN</span><span class="stag">Forensics</span><span class="stag">Cryptography</span></div></div>
+    <div class="skill-card"><h3>Cloud &amp; Infra</h3><div class="stags"><span class="stag">AWS</span><span class="stag">Azure</span><span class="stag">TCP/IP</span><span class="stag">SDN</span><span class="stag">AD</span><span class="stag">Linux</span><span class="stag">Hyperledger</span></div></div>
+  </div>
+</div></section>
+
+<div class="sep"></div>
+
+<!-- REVIEWS -->
+<section><div class="container">
+  <h2 class="section-title">Peer <span>Reviews</span></h2>
+  <p style="font-size:13px;color:#888;margin-bottom:12px">365 reviews for 36 journals &middot; <a href="https://orcid.org/0000-0002-1227-387X" target="_blank">ORCID Verified</a></p>
+  <div class="rev-grid">
+    <div class="rev"><span>IEEE Access</span><span class="r-count">185</span></div>
+    <div class="rev"><span>Scientific Reports</span><span class="r-count">26</span></div>
+    <div class="rev"><span>Knowledge-Based Systems</span><span class="r-count">24</span></div>
+    <div class="rev"><span>Eng. App. of AI</span><span class="r-count">21</span></div>
+    <div class="rev"><span>Expert Systems</span><span class="r-count">17</span></div>
+    <div class="rev"><span>Cluster Computing</span><span class="r-count">14</span></div>
+    <div class="rev"><span>J. Info. Sec. &amp; App.</span><span class="r-count">14</span></div>
+    <div class="rev"><span>Internet of Things</span><span class="r-count">12</span></div>
+    <div class="rev"><span>Discover Computing</span><span class="r-count">5</span></div>
+    <div class="rev"><span>Discover IoT</span><span class="r-count">5</span></div>
+    <div class="rev"><span>iScience</span><span class="r-count">4</span></div>
+    <div class="rev"><span>16+ Others</span><span class="r-count">38+</span></div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title"><span style="color:#fff">Contact</span></h2>
+    <div class="contact-grid">
+      <a href="mailto:kmkhol01@gmail.com" class="c-item"><div class="c-label">Email</div><div class="c-val">kmkhol01@gmail.com</div></a>
+      <a href="https://scholar.google.com/citations?hl=en&user=GHZMU_oAAAAJ" target="_blank" class="c-item"><div class="c-label">Google Scholar</div><div class="c-val">Dr. Mohammed Tawfik</div></a>
+      <a href="https://orcid.org/0000-0002-1227-387X" target="_blank" class="c-item"><div class="c-label">ORCID</div><div class="c-val">0000-0002-1227-387X</div></a>
+      <a href="https://github.com/kmkholm" target="_blank" class="c-item"><div class="c-label">GitHub</div><div class="c-val">kmkholm</div></a>
+      <div class="c-item"><div class="c-label">Location</div><div class="c-val">Irbid, Jordan</div></div>
+      <div class="c-item"><div class="c-label">Phone</div><div class="c-val">+962 779 100 924</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Dr. Mohammed Tawfik Musaed</footer>
+
+<script>
+function fpub(t,el){document.querySelectorAll('.pub-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.querySelectorAll('.pub').forEach(p=>{p.classList.toggle('show',t==='all'||p.dataset.t===t)})}
+function fproj(c,el){document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.querySelectorAll('.proj').forEach(p=>{p.classList.toggle('show',c==='all'||p.dataset.c===c)})}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
+</script>
+</body>
+</html>
