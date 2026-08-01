@@ -73,6 +73,9 @@ section{padding:50px 0}
 .pub .p-title{font-size:14px;font-weight:600;color:#333}
 .pub .p-venue{font-size:12px;color:#888;margin-top:2px}
 .pub .p-venue em{color:#4054b2;font-style:normal;font-weight:500}
+.pub .p-venue a.doi{color:#777;font-size:11px;border-bottom:1px dotted #bbb}
+.pub .p-venue a.doi:hover{color:#4054b2;border-bottom-color:#4054b2}
+.new-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.5px;padding:2px 6px;border-radius:3px;background:#27ae60;color:#fff;vertical-align:middle;margin-left:6px}
 
 /* PROJECTS */
 .proj-filters{display:flex;gap:6px;margin-bottom:15px;flex-wrap:wrap}
@@ -230,9 +233,10 @@ footer{background:#2d3a8c;color:rgba(255,255,255,.6);padding:20px 0;text-align:c
     <span class="pub-btn" onclick="fpub('c',this)">Conferences &amp; Chapters</span>
   </div>
   <div class="pub-scroll">
-    <div class="pub show" data-t="j"><div class="p-title">HIFN-Transformer: Learnable Information-Theoretic Parameters for Interpretable Deep Classification</div><div class="p-venue"><em>IEEE Access</em> &middot; In Press</div></div>
-    <div class="pub show" data-t="j"><div class="p-title">AMSE: Dialect-Aware Multi-Strategy Ensemble for Arabic Vishing Detection</div><div class="p-venue"><em>PeerJ Computer Science</em> &middot; In Press</div></div>
-    <div class="pub show" data-t="j"><div class="p-title">FL-Based Cervical Cancer Classification Using Hybrid KAN-ViT-Autoencoder</div><div class="p-venue"><em>Neural Computing and Applications</em> &middot; In Press</div></div>
+    <div class="pub show" data-t="j"><div class="p-title">FedMamba-IoMT: Federated State Space Models with Differential Privacy and Byzantine Resilience for Privacy-Preserving Intrusion Detection in the Internet of Medical Things<span class="new-badge">NEW</span></div><div class="p-venue"><em>PLOS ONE</em> &middot; 2026 &middot; <a class="doi" href="https://doi.org/10.1371/journal.pone.0355601" target="_blank" rel="noopener">doi:10.1371/journal.pone.0355601</a></div></div>
+    <div class="pub show" data-t="j"><div class="p-title">HIFN-Transformer: Learnable Information-Theoretic Parameters for Interpretable Deep Classification<span class="new-badge">NEW</span></div><div class="p-venue"><em>IEEE Access</em> &middot; 2026 &middot; <a class="doi" href="https://doi.org/10.1109/ACCESS.2026.3719211" target="_blank" rel="noopener">doi:10.1109/ACCESS.2026.3719211</a></div></div>
+    <div class="pub show" data-t="j"><div class="p-title">DAMSE: A Dialect-Aware Multi-Strategy Ensemble Framework for Arabic Vishing Detection with Zero-Shot Learning<span class="new-badge">NEW</span></div><div class="p-venue"><em>PeerJ Computer Science</em> &middot; 2026 &middot; <a class="doi" href="https://doi.org/10.7717/peerj-cs.3985" target="_blank" rel="noopener">doi:10.7717/peerj-cs.3985</a></div></div>
+    <div class="pub show" data-t="j"><div class="p-title">Federated Learning-Based Cervical Cancer Classification Using a Novel Hybrid KAN-ViT-Autoencoder Architecture<span class="new-badge">NEW</span></div><div class="p-venue"><em>Neural Computing and Applications</em> &middot; 2026 &middot; <a class="doi" href="https://doi.org/10.1007/s00521-026-12311-9" target="_blank" rel="noopener">doi:10.1007/s00521-026-12311-9</a></div></div>
     <div class="pub show" data-t="j"><div class="p-title">SFB-KAN: Federated B-Spline KAN for In-Vehicle Intrusion Detection</div><div class="p-venue"><em>Neural Computing and Applications</em> &middot; In Press</div></div>
     <div class="pub show" data-t="j"><div class="p-title">EKT-XAI: Efficient KAN Transformer for Lightweight Smishing Detection</div><div class="p-venue"><em>Accepted</em></div></div>
     <div class="pub show" data-t="j"><div class="p-title">Optimizing Bitcoin Trading with Deep RL and Recurrent Neural Networks</div><div class="p-venue"><em>Accepted</em></div></div>
@@ -293,7 +297,7 @@ footer{background:#2d3a8c;color:rgba(255,255,255,.6);padding:20px 0;text-align:c
 <section id="projects"><div class="container">
   <h2 class="section-title">GitHub <span>Projects</span></h2>
   <div class="proj-filters">
-    <span class="pf-btn active" onclick="fproj('all',this)">All (49)</span>
+    <span class="pf-btn active" onclick="fproj('all',this)">All (55)</span>
     <span class="pf-btn" onclick="fproj('sec',this)">Security</span>
     <span class="pf-btn" onclick="fproj('ai',this)">AI / ML</span>
     <span class="pf-btn" onclick="fproj('bc',this)">Blockchain</span>
@@ -302,6 +306,8 @@ footer{background:#2d3a8c;color:rgba(255,255,255,.6);padding:20px 0;text-align:c
     <span class="pf-btn" onclick="fproj('oth',this)">Other</span>
   </div>
   <div class="proj-grid">
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/SecureBTChat" target="_blank">SecureBTChat</a><span class="new-badge">NEW</span></h3><p>End-to-end encrypted Bluetooth chat for Android &mdash; no internet, no servers. ECDH P-256 + AES-256-GCM, Arabic/English.</p><div class="proj-meta"><span class="proj-lang">Java</span><span class="proj-stars">&#9733; 1</span></div></div>
+    <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/LLM-firewall" target="_blank">SentinelLLM &mdash; LLM Firewall</a><span class="new-badge">NEW</span></h3><p>Semantic security gateway for LLM traffic: prompt-injection detection (EN/AR), reversible PII redaction, tamper-evident audit trail.</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/phishing" target="_blank">phishing</a></h3><p>Phishing detection and analysis</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 2</span></div></div>
     <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/sec" target="_blank">sec</a></h3><p>Security tools for vulnerability assessment</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/ejptv2" target="_blank">ejptv2</a></h3><p>eJPTv2 penetration testing resources</p><div class="proj-meta"><span class="proj-lang">Docs</span></div></div>
@@ -323,6 +329,7 @@ footer{background:#2d3a8c;color:rgba(255,255,255,.6);padding:20px 0;text-align:c
     <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/Digital-Forensics-" target="_blank">Digital-Forensics</a></h3><p>Digital forensics tools</p><div class="proj-meta"><span class="proj-lang">Docs</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="sec"><h3><a href="https://github.com/kmkholm/AI-Based-Antivirus-System" target="_blank">AI-Antivirus</a></h3><p>AI-powered antivirus</p><div class="proj-meta"><span class="proj-lang">Docs</span></div></div>
 
+    <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/ChronoFuse-2" target="_blank">ChronoFuse</a><span class="new-badge">NEW</span></h3><p>Clock-skew-robust state-space fusion of asynchronous multi-rate wearable sensor streams (MHEALTH, PAMAP2, WESAD).</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/HIFN-Hybrid-Information-Flow-Networks" target="_blank">HIFN-Networks</a></h3><p>Hybrid Information-Flow Networks for IDS</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/HIFN2" target="_blank">HIFN2</a></h3><p>HIFN-Transformer v2</p><div class="proj-meta"><span class="proj-lang">Python</span></div></div>
     <div class="proj show" data-c="ai"><h3><a href="https://github.com/kmkholm/FedMamba-IoMT" target="_blank">FedMamba-IoMT</a></h3><p>Federated Mamba for IoMT security</p><div class="proj-meta"><span class="proj-lang">Python</span></div></div>
@@ -341,17 +348,20 @@ footer{background:#2d3a8c;color:rgba(255,255,255,.6);padding:20px 0;text-align:c
     <div class="proj show" data-c="bc"><h3><a href="https://github.com/kmkholm/Dream-Cryptography" target="_blank">Dream-Cryptography</a></h3><p>Novel cryptography</p><div class="proj-meta"><span class="proj-lang">Python</span></div></div>
     <div class="proj show" data-c="bc"><h3><a href="https://github.com/kmkholm/Blockchain-visualization" target="_blank">Blockchain-viz</a></h3><p>Interactive blockchain visualization</p><div class="proj-meta"><span class="proj-lang">HTML</span><span class="proj-stars">&#9733; 1</span></div></div>
 
+    <div class="proj show" data-c="viz"><h3><a href="https://github.com/kmkholm/Paper2DrawIO" target="_blank">Paper2DrawIO</a><span class="new-badge">NEW</span></h3><p>Turns a research paper into a publication-quality, fully editable draw.io architecture figure &mdash; automatically.</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 3</span></div></div>
     <div class="proj show" data-c="viz"><h3><a href="https://github.com/kmkholm/Data-Structure-Visualizations" target="_blank">Data-Structure-Viz</a></h3><p>Interactive data structures</p><div class="proj-meta"><span class="proj-lang">HTML</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="viz"><h3><a href="https://github.com/kmkholm/cryptography-visualization" target="_blank">Crypto-Viz</a></h3><p>Caesar, Vigenere, AES, DES visualizer</p><div class="proj-meta"><span class="proj-lang">HTML</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="viz"><h3><a href="https://github.com/kmkholm/quantum_computing_visualization-v1" target="_blank">Quantum-Viz</a></h3><p>Quantum computing visualization</p><div class="proj-meta"><span class="proj-lang">HTML</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="viz"><h3><a href="https://github.com/kmkholm/advanced-journal-metrics-scholar" target="_blank">Journal-Metrics</a></h3><p>Journal metrics analysis tool</p><div class="proj-meta"><span class="proj-lang">JavaScript</span><span class="proj-stars">&#9733; 1</span></div></div>
 
+    <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/150-Graduation-Project-Ideas" target="_blank">150 Graduation Project Ideas</a><span class="new-badge">NEW</span></h3><p>150 bachelor-level capstone ideas in cybersecurity &amp; cloud computing, in Arabic &mdash; incl. 50 localised to the regional context.</p><div class="proj-meta"><span class="proj-lang">Docs</span></div></div>
     <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/Introduction-to-Cybersecurity-Course" target="_blank">Intro-Cybersecurity</a></h3><p>Course materials</p><div class="proj-meta"><span class="proj-lang">PPT</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/Cloud-computing-security" target="_blank">Cloud-Security</a></h3><p>Cloud computing security course</p><div class="proj-meta"><span class="proj-lang">Docs</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/Principles-of-Cloud-Computing" target="_blank">Cloud-Principles</a></h3><p>Cloud computing principles</p><div class="proj-meta"><span class="proj-lang">PPT</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/secure-software-engineering-SSE" target="_blank">Secure-Software-Eng</a></h3><p>SSE course PPT</p><div class="proj-meta"><span class="proj-lang">PPT</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="edu"><h3><a href="https://github.com/kmkholm/digital-forensics-lab" target="_blank">Forensics-Lab</a></h3><p>Hands-on forensics labs</p><div class="proj-meta"><span class="proj-lang">Docs</span></div></div>
 
+    <div class="proj show" data-c="oth"><h3><a href="https://github.com/kmkholm/masjid-silencer" target="_blank">masjid-silencer</a><span class="new-badge">NEW</span></h3><p>Flutter Android app that auto-silences the phone inside mosques via geofencing &amp; prayer times. Bilingual UI.</p><div class="proj-meta"><span class="proj-lang">Dart</span><span class="proj-stars">&#9733; 1</span></div></div>
     <div class="proj show" data-c="oth"><h3><a href="https://github.com/kmkholm/CHI660C-Python-Controller" target="_blank">CHI660C-Controller</a></h3><p>Electrochemical workstation controller</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 2</span></div></div>
     <div class="proj show" data-c="oth"><h3><a href="https://github.com/kmkholm/RuView" target="_blank">RuView</a></h3><p>WiFi to spatial intelligence</p><div class="proj-meta"><span class="proj-lang">Docs</span></div></div>
     <div class="proj show" data-c="oth"><h3><a href="https://github.com/kmkholm/agenticSeek" target="_blank">agenticSeek</a></h3><p>Fully local autonomous AI agent</p><div class="proj-meta"><span class="proj-lang">Python</span><span class="proj-stars">&#9733; 1</span></div></div>
